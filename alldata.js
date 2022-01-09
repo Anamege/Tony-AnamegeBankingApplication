@@ -1,12 +1,36 @@
 function AllData(){    
    const ctx = React.useContext(UserContext);
-   const [currentUserIndex, setCurrentUserIndex] = React.useState(0); 
-   let className = JSON.stringify(ctx.users[currentUserIndex].name);
-   let balance = ctx.users[currentUserIndex].balance;
+   const user = ctx.users
 
    return (
-    <h5>All Data<br/>
-    {JSON.stringify(ctx)}<br/>
-    </h5>
-    );
-}
+           <Card
+           bgcolor="success"    
+           header="All Data"
+           body={
+           <table className="table table-hover">
+               <thead> 
+                       <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Balance</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    {user.map((value,index) => {
+                        return (
+                        <tr key={index+1}>
+                        <th scope="row">{index+1}</th>
+                        <td>{value.name}</td>
+                        <td>{value.email}</td>
+                        <td>{value.password}</td>
+                        <td>{value.balance}</td>
+                      </tr>)
+                    })}
+                </tbody>
+              </table>
+              }
+              />
+              );
+            }
