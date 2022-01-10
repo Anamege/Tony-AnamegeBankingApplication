@@ -1,11 +1,11 @@
 function CreateAccount() {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState("");
-  const [firstname, setFirstName] = React.useState("");
-  const [lastname, setLastName] = React.useState("");
+  const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const ctx = React.useContext(UserContext);
+  
 
   //Validate function
   function validate(field, label) {
@@ -19,19 +19,17 @@ function CreateAccount() {
 
 //Validate Account Details
   function handleCreate() {
-    console.log(firstname, lastname, email, password);
-    if (!validate(firstname, "firstname")) return;
-    if (!validate(lastname, "lastname")) return;
+    console.log(name, email, password);
+    if (!validate(name, "name")) return;    
     if (!validate(email, "email")) return;
     if (!validate(password, "password")) return;
-    ctx.users.push({ firstname, lastname, email, password, balance: 500 });
+    ctx.users.push({name, email, password, balance: 500 });
     setShow(false);
   }
 
 //Clear & Reset Form After Account Creation
   function clearForm() {
-    setFirstName("");
-    setLastName("");
+    setName("");
     setEmail("");
     setPassword("");
     setShow(true);
@@ -46,26 +44,15 @@ function CreateAccount() {
       body={
         show ? (
           <>
-            First Name
+            Name
             <br />
             <input
               type="input"
               className="form-control"
-              id="firstname"
-              placeholder="Enter First Name"
-              value={firstname}
-              onChange={(e) => setFirstName(e.currentTarget.value)}
-            />
-            <br />
-            Last Name
-            <br />
-            <input
-              type="input"
-              className="form-control"
-              id="lastname"
-              placeholder="Enter Last Name"
-              value={lastname}
-              onChange={(e) => setLastName(e.currentTarget.value)}
+              id="name"
+              placeholder="Enter Name"
+              value={name}
+              onChange={(e) => setName(e.currentTarget.value)}
             />
             <br />
             Email Address
@@ -110,3 +97,4 @@ function CreateAccount() {
     />
   );
 }
+//
