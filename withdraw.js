@@ -88,7 +88,7 @@ function Withdraw() {
             <br />
             <button
               type="submit"
-              className="btn btn-warning"
+              className="btn btn-danger"
               onClick={handleWithdraw}
             >
               Submit Transaction
@@ -99,7 +99,7 @@ function Withdraw() {
 //Validate Transaction Completed Successfully / Add Another Transaction.          
           <>
             <h5>Transaction Successful!</h5><br/>
-            <button type="submit" className="btn btn-warning" onClick={clearForm}>
+            <button type="submit" className="btn btn-danger" onClick={clearForm}>
               Add Another Transaction
             </button>
           </>
