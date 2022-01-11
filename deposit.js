@@ -62,14 +62,14 @@ return true;
         <input type="number" className="form-control" id="deposit"
         placeholder="Enter Deposit Amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)} /><br/>
 
-        <button type="submit" className="btn btn-warning" onClick={handleDeposit}>Submit Transaction.</button>
+        <button type="submit" className="btn btn-danger" onClick={handleDeposit}>Submit Transaction.</button>
             </>
 
         ):(
     //Validate Successful Completion of Deposit / Add Another Transaction       
         <>
         <h5>Transaction Successful!</h5><br/>
-        <button type="submit" className="btn btn-warning" onClick={clearForm}>Add Another Transaction</button>
+        <button type="submit" className="btn btn-danger" onClick={clearForm}>Add Another Transaction</button>
         </>
 
     )}
