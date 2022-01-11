@@ -46,7 +46,7 @@ function Login(){
             <input type="password" className="form-control" id="password"
             placeholder="Enter password here" value={password}onChange={e => setPassword(e.currentTarget.value)} />
            <br/>
-            <button type="submit" className="btn btn-warning" onClick={handleCreate}>Login</button>
+            <button type="submit" className="btn btn-danger" onClick={handleCreate}>Login</button>
             </>
 
         ):(
