@@ -7,15 +7,16 @@ function Deposit(){
 
     //Validate functions
     function validate(field, label){
-        if (!field) {            
-            setTimeout(() => setStatus(''), 10000);
-            alert(`Invalid ${label} amount`);
-            return false;
+        if (!field) {             
+                setStatus("Error: " + label);
+                setTimeout(() => setStatus(''), 10000);
+                alert(`Please enter a valid ${label} amount`);
+                return false;                
         }
 
         if (field === deposit) {
             if (Number(deposit) <= 0) {
-                alert("Please enter a valid amount");
+                alert("Please enter a valid Deposit Amount");
                 return false;
     }
     
@@ -26,18 +27,25 @@ return true;
 
     function handleDeposit() {       
             if (!validate(name, 'name')) return;
-            if (!validate(deposit, 'deposit')) return;
-            if (Number(deposit) <= ctx.users[0].balance);
-            if (name === ctx.users[0].name) { 
-            console.log(name, `Deposit: ${deposit}`);           
-            ctx.users.push({deposit});
+            if (!validate(deposit, 'deposit')) return;            
+            if (name == ctx.users[0].name) { 
+            console.log(name, `Deposit amount: ${deposit}`);           
+            ctx.users.push({deposit});  
+            if (Number(deposit) <= ctx.users[0].balance){           
             ctx.users[0].balance += Number(deposit);
             setShow(false);
         } else {
-            alert(`Please enter valid Account Name`);
+            alert("Invalid Account Name");
+            return;
+
             
         }
     } 
+    else {
+        ctx.users[0].balance += Number(deposit);
+        setShow(false);
+    }
+}
 
     //Clear Form After Deposit Completed                
     function clearForm(){
@@ -56,7 +64,7 @@ return true;
             <>
         Current Balance<br/> {ctx.users[0].balance} <br/><br/> 
         Account Name<br/>
-        <input type="input" className="form-control" id="name" placeholder="Enter Name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>  
+        <input type="input" className="form-control" id="name" placeholder="Enter Your Full Name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>  
 
         Deposit Amount<br/>                  
         <input type="number" className="form-control" id="deposit"
