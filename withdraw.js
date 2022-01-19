@@ -23,7 +23,7 @@ function Withdraw() {
         return false;
       }
       if ((ctx.users[0].balance - Number(withdraw)) < 25){
-        alert("Minimum can't be below $25")
+        alert("Minimum balance can't be below $25")
         return false;
       }
     }
@@ -33,7 +33,7 @@ function Withdraw() {
   function handleWithdraw() {
     if (!validate(name, 'name')) return;  
     if (!validate(withdraw, 'withdraw')) return;
-    if (name === ctx.users[0].name) {     
+    if (name == ctx.users[0].name) {     
     console.log(name, `Withdraw amount: ${withdraw}`);
     ctx.users.push({withdraw});
     if (Number(withdraw) <= ctx.users[0].balance){
@@ -43,9 +43,12 @@ function Withdraw() {
       alert("Invalid Account Name");
       return;
     }
-  } else{
-    alert("Insuffisient Funds");
+  } 
+  else{
+    ctx.users[0].balance -= Number(withdraw);
+    setShow(false);
   }
+
 }
   function clearForm() {
     setWithdraw("");
