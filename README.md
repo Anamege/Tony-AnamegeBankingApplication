@@ -1,5 +1,13 @@
 # Tony-AnamegeBankingApplication
 
-This project is in partial fulfillment of my MIT Fullstack Coding Bootcamp. The Front End Banking Application required building, testing, and deploying a React banking application in addition to designing and building the UI components. While undertaking this project, I demonstrated my ability to use HTML, Javascript, React, Bootstrap, Visual Studio Code, and Babel.
+Project Title: Fullstack Banking Application.
 
-In this app, I created several functionalities including ability to create accounts, take deposits and make withdraws within certain parameters. I also created login page where bank clients can gain access to their accounts to make transactions upon validation of their identities.  
+Description: This project is in partial fulfillment of my MIT Fullstack Coding Bootcamp. The Banking Application required building and testing an app with limited security, and improving it to become secure using React. 
+
+In this app, I created several functionalities including ability to create accounts, take deposits and make withdraws within certain parameters. I also created login page where bank clients can gain access to their accounts to make transactions upon validation of their identities. I finally refactored the app's front end to ensure routes are connecting to the backend and UI behaving as expected. 
+
+Installation Guide: This project can be cloned via GitHub at https://github.com/Anamege/Tony-AnamegeBankingApplication. 
+
+Technology Used: While undertaking this project, I used HTML, Javascript, React, Bootstrap, Visual Studio Code, Babel and Docker.
+
+License: This project is licensed under MIT's user agreement. 
