@@ -8,6 +8,6 @@ In this app, I created several functionalities including ability to create accou
 
 Installation Guide: This project can be cloned via GitHub at https://github.com/Anamege/Tony-AnamegeBankingApplication. 
 
-Technology Used: While undertaking this project, I used MongoDB, React, Express, and Nodejs.
+Technology Used: While undertaking this project, I used MongoDB, React, Express.js, and Node.js.
 
-License: This project is licensed under MIT's user agreement. 
+License: This project is licensed under MIT's user agreement.
